@@ -14,20 +14,25 @@
 
 int	main(void)
 {
-    std::string operation;
-    // PhoneBook phoneBook;
+    std::string operation, name, lastname, nickname, phone_num;
+    PhoneBook phoneBook;
 
     while (1)
     {        
         std::cout << "Write what you want to do following three operstion:" << std::endl;
-        std::cout << "ADD, SEARCH, EXIT" << std::endl;
+        std::cout << "ADD    |    SEARCH    |    EXIT" << std::endl;
         getline(std::cin, operation);
+		if(std::cin.eof())
+			return 0;
         if(operation == "ADD")
-            std::cout << "add" << std::endl;
+		{
+			if(!phoneBook.add())
+				return 0;
+		}
         else if(operation == "SEARCH")
             std::cout << "search" << std::endl;
         else if(operation == "EXIT")
-            std::cout << "exit" << std::endl;
+            phoneBook.exit();
         else
             std::cout << "Input is discarded." << std::endl;
     }

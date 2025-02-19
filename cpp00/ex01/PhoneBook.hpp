@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cstdlib>
 #include "Contact.hpp"
 
 class PhoneBook
@@ -19,8 +20,8 @@ private:
     Contact contact[8];
     int index;
 public:
-    void add();
-    void search(); 
+    int add();
+    int search(); 
     void exit();
 };
 
