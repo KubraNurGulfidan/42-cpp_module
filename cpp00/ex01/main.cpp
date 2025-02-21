@@ -18,9 +18,12 @@ int	main(void)
     PhoneBook phoneBook;
 
     while (1)
-    {        
-        std::cout << "Write what you want to do following three operstion:" << std::endl;
-        std::cout << "ADD    |    SEARCH    |    EXIT" << std::endl;
+    {
+        std::cout << "*******************************************************" << std::endl;
+        std::cout << "*               WELCOME TO MY PHONEBOOK               *" << std::endl;
+        std::cout << "* Write what you want to do following three operation *" << std::endl;
+        std::cout << "*           ADD    |    SEARCH    |    EXIT           *" << std::endl;
+        std::cout << "*******************************************************" << std::endl;
         getline(std::cin, operation);
 		if(std::cin.eof())
 			return 0;
@@ -30,7 +33,10 @@ int	main(void)
 				return 0;
 		}
         else if(operation == "SEARCH")
-            std::cout << "search" << std::endl;
+		{
+			if(!phoneBook.search())
+				return 0;
+		}
         else if(operation == "EXIT")
             phoneBook.exit();
         else

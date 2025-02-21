@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <iostream>
+#include <iomanip>
 #include <cstdlib>
 #include "Contact.hpp"
 
@@ -18,8 +19,9 @@ class PhoneBook
 {
 private:
     Contact contact[8];
-    int index;
+    int contactCount;
 public:
+	PhoneBook() : contactCount(0){};
     int add();
     int search(); 
     void exit();
