@@ -9,6 +9,6 @@ public:
 	Zombie();
 	~Zombie();
 	void announce(void);
-	void setName(std::string setName){name = setName;}
+	void setName(std::string setName);
 	std::string getName(){return name;}
 };

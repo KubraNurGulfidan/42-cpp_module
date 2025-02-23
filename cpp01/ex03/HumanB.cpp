@@ -6,7 +6,16 @@
 /*   By: kgulfida <kgulfida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 12:33:54 by kgulfida          #+#    #+#             */
-/*   Updated: 2025/02/23 12:33:55 by kgulfida         ###   ########.fr       */
+/*   Updated: 2025/02/23 18:54:39 by kgulfida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "HumanB.hpp"
+
+HumanB::HumanB()
+{
+}
+
+HumanB::~HumanB()
+{
+}

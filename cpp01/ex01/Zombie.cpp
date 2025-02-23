@@ -13,6 +13,11 @@ Zombie::~Zombie()
 	std::cout << "Delete " << this->zombieCount << ". Zombie: " << this->name << std::endl;
 }
 
+void Zombie::setName(std::string setName)
+{
+	name = setName;
+}
+
 void Zombie::announce(void)
 {
 	std::cout << getName() << ": BraiiiiiiinnnzzzZ..." << std::endl;

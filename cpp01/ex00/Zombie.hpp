@@ -10,7 +10,7 @@ public:
 	void announce(void);
 	Zombie* newZombie(std::string name);
 	void randomChump(std::string name);
-	void setName(std::string setName){name = setName;}
+	void setName(std::string setName);
 	std::string getName(){return name;}
 
 };

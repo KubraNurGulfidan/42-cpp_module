@@ -6,7 +6,7 @@
 /*   By: kgulfida <kgulfida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 12:33:59 by kgulfida          #+#    #+#             */
-/*   Updated: 2025/02/23 12:34:00 by kgulfida         ###   ########.fr       */
+/*   Updated: 2025/02/23 18:55:23 by kgulfida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,3 @@ public:
 	std::string getName(){return name;}
 };
 
-HumanA::HumanA()
-{
-}
-
-HumanA::~HumanA()
-{
-}

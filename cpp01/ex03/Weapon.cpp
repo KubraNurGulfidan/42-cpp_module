@@ -6,14 +6,15 @@
 /*   By: kgulfida <kgulfida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 12:30:07 by kgulfida          #+#    #+#             */
-/*   Updated: 2025/02/23 12:52:03 by kgulfida         ###   ########.fr       */
+/*   Updated: 2025/02/23 18:49:13 by kgulfida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-Weapon::Weapon()
+Weapon::Weapon(std::string type)
 {
+	
 }
 
 Weapon::~Weapon()
