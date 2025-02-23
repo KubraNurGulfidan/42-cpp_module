@@ -6,12 +6,10 @@
 /*   By: kgulfida <kgulfida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 14:51:59 by kgulfida          #+#    #+#             */
-/*   Updated: 2025/02/15 16:36:36 by kgulfida         ###   ########.fr       */
+/*   Updated: 2025/02/22 20:10:51 by kgulfida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
 # include <iostream>
 
 class Contact
@@ -21,16 +19,17 @@ private:
 	std::string lastName;
 	std::string nickname;
 	std::string phoneNumber;
+	std::string darkestSecret;
 public:
-	void setFirstName(std::string input){firstName = input;}
-	void setLastName(std::string input){lastName = input;}
-	void setNickname(std::string input){nickname = input;}
-	void setPhoneNumber(std::string input){phoneNumber = input;}
+	void setFirstName(std::string input);
+	void setLastName(std::string input);
+	void setNickname(std::string input);
+	void setPhoneNumber(std::string input);
+	void setDarkestSecret(std::string input);
 
-	std::string getFirstName(){return firstName;}
-	std::string getLastName(){return lastName;}
-	std::string getNickname(){return nickname;}
-	std::string getPhoneNumber(){return phoneNumber;}
+	std::string getFirstName();
+	std::string getLastName();
+	std::string getNickname();
+	std::string getPhoneNumber();
+	std::string getDarkestSecret();
 };
-
-#endif

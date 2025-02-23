@@ -6,7 +6,7 @@
 /*   By: kgulfida <kgulfida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 14:50:41 by kgulfida          #+#    #+#             */
-/*   Updated: 2025/02/10 14:50:42 by kgulfida         ###   ########.fr       */
+/*   Updated: 2025/02/22 20:11:30 by kgulfida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ std::string check_contact(std::string msg, int type)
 		std::cout << msg << "= ";
 		getline(std::cin, input);
 		if (std::cin.eof())
-			return NULL;
+			std::exit(0);
 		if (type == 4 && isNumber(input) == 0)
 		{
 			std::cout << msg << "must be digit." << std::endl;
@@ -51,6 +51,7 @@ int PhoneBook::add()
 	std::string lastName;
 	std::string nickname;
 	std::string phoneNumber;
+	std::string darkestSecret;
 	firstName = check_contact("First Name ", 1);
 	this->contact[index % 8].setFirstName(firstName);
 	lastName = check_contact("Last Name ", 2);
@@ -59,6 +60,8 @@ int PhoneBook::add()
 	this->contact[index % 8].setNickname(nickname);
 	phoneNumber = check_contact("Phone Number ", 4);
 	this->contact[index % 8].setPhoneNumber(phoneNumber);
+	darkestSecret = check_contact("DarkestSecret ", 1);
+	this->contact[index % 8].setDarkestSecret(darkestSecret);
 	index++;
 	if (this->contactCount < 8)
         this->contactCount++;
@@ -126,6 +129,8 @@ int PhoneBook::search()
 			std::cout << "Last Name: " << contact[searchIndex - 1].getLastName() << std::endl;
 			std::cout << "Nickname: " << contact[searchIndex - 1].getNickname() << std::endl;
 			std::cout << "Phone Number: " << contact[searchIndex - 1].getPhoneNumber() << std::endl;
+			std::cout << "Darkest Secret: " << contact[searchIndex - 1].getDarkestSecret() << std::endl;
+		
 			return 1;
 		}
 	}
