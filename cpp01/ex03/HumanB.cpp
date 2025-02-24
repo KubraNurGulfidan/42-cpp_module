@@ -10,12 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.hpp"
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
+# include "HumanB.hpp"
 
-HumanB::HumanB()
+HumanB::HumanB(std::string name)
 {
+	std::cout << name << " created" << std::endl;
+	setName(name);
+	this->weapon = NULL;
 }
-
 HumanB::~HumanB()
 {
+	std::cout << getName() << " terminated" << std::endl;
 }
+
+void HumanB::setWeapon(Weapon& input){this->weapon = &input;}
+void HumanB::setName(std::string input){this->name = input;}
+std::string HumanB::getName(){return this->name;}
+
+void  HumanB::attack()
+{
+	if (this->weapon == NULL)
+		std::cout << getName() << " don't have weapon " << std::endl;
+	else
+		std::cout << getName() << " attacks with their " << this->weapon->getType() << std::endl;
+}
+#endif

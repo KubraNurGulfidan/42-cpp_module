@@ -1,7 +1,7 @@
-Name = Weapon
+Name = Replace
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
+SRC = main.cpp
 
 all: $(Name)
 

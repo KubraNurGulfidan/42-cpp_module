@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
+# include "Weapon.hpp"
 
 class HumanA
 {
@@ -18,11 +20,12 @@ private:
 	std::string name;
 	Weapon *weapon;
 public:
-	HumanA();
+	HumanA(std::string name, Weapon& weapon);
 	~HumanA();
-	void  attack();
-	void setWeapon(Weapon *input);
-	void setName(std::string input){name = input;}
-	std::string getName(){return name;}
+	void attack();
+	void setWeapon(Weapon& input);
+	void setName(std::string input);
+	std::string	getName();
 };
 
+#endif
