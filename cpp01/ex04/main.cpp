@@ -3,6 +3,12 @@
 
 int main(int ac, char **av)
 {
+	if (ac != 4)
+	{
+		std::cout << "You must give filename, search string and replace string." << std::endl;
+		return 1;
+	}
+
 	std::string fileName = av[1];
 	std::string outputFileName = fileName + ".replace";
 	std::string s1 = av[2];
@@ -12,11 +18,6 @@ int main(int ac, char **av)
 	std::string line;
 	std::size_t pos = 0;
 
-	if (ac != 4)
-	{
-		std::cout << "You must give filename, search string and replace string." << std::endl;
-		return 1;
-	}
 	if (fileName.empty() || s1.empty() || s2.empty())
 	{
 		std::cout << "Error: Any argument cannot be empty." << std::endl;
@@ -36,6 +37,7 @@ int main(int ac, char **av)
 	}
 	while (getline(input,line))
 	{
+		pos = 0;
 		while ((pos = line.find(s1, pos)) != std::string::npos)
 		{
 			line = line.substr(0, pos) + s2 + line.substr(pos + s1.length());
