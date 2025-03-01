@@ -10,5 +10,5 @@ public:
 	~Zombie();
 	void announce(void);
 	void setName(std::string setName);
-	std::string getName(){return name;}
+	std::string getName();
 };
