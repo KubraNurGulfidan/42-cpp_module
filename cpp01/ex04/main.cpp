@@ -1,6 +1,18 @@
 #include <iostream>
 #include <fstream>
 
+static std::string takefilename(const char *av)
+{
+    std::string file;
+
+    for (int i = 0; av[i]; ++i) {
+        if (av[i] == '.')
+            break;
+        file += av[i];
+    }
+    return file;
+}
+
 int main(int ac, char **av)
 {
 	if (ac != 4)
@@ -8,9 +20,9 @@ int main(int ac, char **av)
 		std::cout << "You must give filename, search string and replace string." << std::endl;
 		return 1;
 	}
-
+	
 	std::string fileName = av[1];
-	std::string outputFileName = fileName + ".replace";
+	std::string outputFileName = takefilename(av[1]) + ".replace";
 	std::string s1 = av[2];
 	std::string s2 = av[3];
 	std::ifstream input;
@@ -43,6 +55,10 @@ int main(int ac, char **av)
 			line = line.substr(0, pos) + s2 + line.substr(pos + s1.length());
 			pos += s2.length();
 		}
-		output << line << std::endl;
+		if (input.eof())
+    		output << line;
+		else
+			output << line << std::endl;
+		
 	}
 }

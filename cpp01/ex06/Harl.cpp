@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Harl.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kgulfida <kgulfida@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/25 14:11:47 by kgulfida          #+#    #+#             */
+/*   Updated: 2025/02/25 15:51:12 by kgulfida         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include  "Harl.hpp"
 
 void Harl::debug(void)
@@ -39,17 +51,17 @@ void Harl::complain(std::string level)
 	}
 	switch (levelIndex)
 	{
-	case 0:
-		this->debug();
-	case 1:
-		this->info();
-	case 2:
-		this->warning();
-	case 3:
-		this->error();
-		break;	
-	default:
-		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+		case 0:
+			this->debug();
+		case 1:
+			this->info();
+		case 2:
+			this->warning();
+		case 3:
+			this->error();
+			break;	
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	}
 }
 
