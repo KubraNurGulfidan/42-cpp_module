@@ -1,5 +1,14 @@
-#ifndef FIXED_HPP
-# define FIXED_HPP
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kgulfida <kgulfida@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/03 08:20:28 by kgulfida          #+#    #+#             */
+/*   Updated: 2025/03/03 08:38:27 by kgulfida         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 # include <iostream>
 # include <cmath>
@@ -50,5 +59,3 @@ public:
 };
 
 std::ostream &operator << (std::ostream &out, const Fixed &fixed);
-
-#endif

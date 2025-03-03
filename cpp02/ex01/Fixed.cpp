@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*	                                                                        */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kgulfida <kgulfida@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/28 16:46:32 by kgulfida          #+#    #+#             */
+/*   Updated: 2025/03/02 11:49:48 by kgulfida         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 Fixed::Fixed()
@@ -13,14 +25,14 @@ Fixed::~Fixed()
 
 Fixed::Fixed(const int fixed)
 {
-    this->fixedPoint = fixed << this->nbrOfFractionalBits;
-    std::cout << "Int constructor called." << std::endl;
+	this->fixedPoint = fixed << this->nbrOfFractionalBits;
+	std::cout << "Int constructor called." << std::endl;
 }
 
 Fixed::Fixed(const float fixed)
 {
-    this->fixedPoint = roundf(fixed * (1 << this->nbrOfFractionalBits));
-    std::cout << "Float constructor called." << std::endl;
+	this->fixedPoint = roundf(fixed * (1 << this->nbrOfFractionalBits));
+	std::cout << "Float constructor called." << std::endl;
 }
 
 Fixed::Fixed(const Fixed &fixed)
@@ -51,16 +63,16 @@ void Fixed::setRawBits( int const raw )
 
 float Fixed::toFloat(void) const
 {
-    return static_cast<float>(this->fixedPoint) / (1 << this->nbrOfFractionalBits);
+	return static_cast<float>(this->fixedPoint) / (1 << this->nbrOfFractionalBits);
 }
 
 int Fixed::toInt(void) const
 {
-    return this->fixedPoint >> this->nbrOfFractionalBits;
+	return this->fixedPoint >> this->nbrOfFractionalBits;
 }
 
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
 {
-    out << fixed.toFloat();
-    return out;
+	out << fixed.toFloat();
+	return out;
 }

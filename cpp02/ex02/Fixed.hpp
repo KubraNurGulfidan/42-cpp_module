@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kgulfida <kgulfida@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/28 16:47:37 by kgulfida          #+#    #+#             */
+/*   Updated: 2025/03/03 15:08:20 by kgulfida         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include <cmath>
 
@@ -23,10 +35,10 @@ public:
 	bool operator == (const Fixed &fixed);
 	bool operator != (const Fixed &fixed);
 
-	Fixed operator + (const Fixed &fixed);
-	Fixed operator - (const Fixed &fixed);
-	Fixed operator * (const Fixed &fixed);
-	Fixed operator / (const Fixed &fixed);
+	float operator + (const Fixed &fixed);
+	float operator - (const Fixed &fixed);
+	float operator * (const Fixed &fixed);
+	float operator / (const Fixed &fixed);
 
 	Fixed operator ++ (int);
 	Fixed &operator ++ ();
