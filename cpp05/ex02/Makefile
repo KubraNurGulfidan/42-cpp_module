@@ -1,4 +1,4 @@
-NAME = Bureaucrat
+NAME = AForm
 SRC = main.cpp Bureaucrat.cpp Form.cpp
 
 OBJS = $(SRC:.cpp=.o)
