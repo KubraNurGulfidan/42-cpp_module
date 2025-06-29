@@ -13,33 +13,20 @@ int main()
 	std::cout << b;
 
 	std::cout << f;
+	std::cout << f.getName() << " sign grade is " << f.getGradeToSigned() << std::endl;
 	std::cout << s;
+	std::cout << s.getName() << " sign grade is " << s.getGradeToSigned() << std::endl;
+
 
 	std::cout << std::endl << "---------------------------------------" << std::endl << std::endl;
 
-	try
-	{
-		a.signForm(f);
-		std::cout << f;
-	}
-	catch (const std::exception& e)
-	{
-		std::cout << a.getName() << " couldn't sign " << f.getName() 
-			<< " because " << e.what() << std::endl;
-	}
+	a.signForm(f);
+	std::cout << f;
 
 	std::cout << std::endl << "---------------------------------------" << std::endl << std::endl;
 
-	try
-	{
-		b.signForm(s);
-		std::cout << s;
-	}
-	catch (const std::exception& e)
-	{
-		std::cout << b.getName() << " couldn't sign " << s.getName()
-			<< " because " << e.what() << std::endl;
-	}
+	b.signForm(s);
+	std::cout << s;
 
 	return 0;
 }
