@@ -6,7 +6,7 @@
 /*   By: kgulfida <kgulfida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 20:21:47 by kgulfida          #+#    #+#             */
-/*   Updated: 2025/06/28 18:07:02 by kgulfida         ###   ########.fr       */
+/*   Updated: 2025/06/30 12:27:50 by kgulfida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ public:
 
 	void incrementGrade();
 	void decrementGrade();
-
+	
 	void signForm(AForm& form) const;
 	void executeForm(AForm& form) const;
 

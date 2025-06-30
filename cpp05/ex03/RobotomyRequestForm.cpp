@@ -6,14 +6,14 @@
 /*   By: kgulfida <kgulfida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 20:22:02 by kgulfida          #+#    #+#             */
-/*   Updated: 2025/06/24 20:22:03 by kgulfida         ###   ########.fr       */
+/*   Updated: 2025/06/30 12:26:06 by kgulfida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 #include "Bureaucrat.hpp"
-#include <cstdlib>   // rand, srand
-#include <ctime>     // time
+#include <cstdlib>
+#include <ctime>
 #include <iostream>
 
 RobotomyRequestForm::RobotomyRequestForm()

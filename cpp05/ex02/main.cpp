@@ -6,7 +6,7 @@
 /*   By: kgulfida <kgulfida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 20:21:53 by kgulfida          #+#    #+#             */
-/*   Updated: 2025/06/24 20:21:54 by kgulfida         ###   ########.fr       */
+/*   Updated: 2025/06/30 11:36:33 by kgulfida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,58 +17,36 @@
 #include "PresidentialPardonForm.hpp"
 
 int main() {
-    Bureaucrat alice("Alice", 1);      // En yüksek yetki
-    Bureaucrat bob("Bob", 50);         // Orta seviye
-    Bureaucrat charlie("Charlie", 130); // Düşük seviye
+    Bureaucrat alice("Alice", 1);
+    Bureaucrat bob("Bob", 50);
+    Bureaucrat charlie("Charlie", 138);
 
     ShrubberyCreationForm shrub("home");
-    RobotomyRequestForm robo("Bender");
-    PresidentialPardonForm pardon("Ford Prefect");
+    RobotomyRequestForm robo("Wall-e");
+    PresidentialPardonForm pardon("Arthur Dent");
 
-    // === SHRUBBERY ===
-    std::cout << "\n=== Shrubbery ===" << std::endl;
-    try {
-        charlie.executeForm(shrub);
-    } catch (const std::exception& e) {
-        std::cout << "Execution failed: " << e.what() << std::endl;
-    }
+	// === SHRUBBERY ===
+	std::cout << "\n=== Shrubbery ===" << std::endl;
+	
+	charlie.executeForm(shrub);
+	charlie.signForm(shrub);
+	charlie.executeForm(shrub);
+	bob.executeForm(shrub);
 
-    try {
-        charlie.signForm(shrub);
-        charlie.executeForm(shrub);
-    } catch (const std::exception& e) {
-        std::cout << "Execution failed: " << e.what() << std::endl;
-    }
+	// === ROBOTOMY ===
+	std::cout << "\n=== Robotomy ===" << std::endl;
 
-    // === ROBOTOMY ===
-    std::cout << "\n=== Robotomy ===" << std::endl;
-    try {
-        bob.signForm(robo);
-        bob.executeForm(robo);
-    } catch (const std::exception& e) {
-        std::cout << "Execution failed: " << e.what() << std::endl;
-    }
+	bob.signForm(robo);
+	bob.executeForm(robo);
+	alice.executeForm(robo);
 
-    // === PARDON ===
-    std::cout << "\n=== Presidential Pardon ===" << std::endl;
-    try {
-        bob.signForm(pardon); // Yetersiz -> exception
-    } catch (const std::exception& e) {
-        std::cout << "Signing failed: " << e.what() << std::endl;
-    }
-
-    try {
-        alice.signForm(pardon);
-        bob.executeForm(pardon); // Yetersiz
-    } catch (const std::exception& e) {
-        std::cout << "Execution failed: " << e.what() << std::endl;
-    }
-
-    try {
-        alice.executeForm(pardon); // Başarılı
-    } catch (const std::exception& e) {
-        std::cout << "Execution failed: " << e.what() << std::endl;
-    }
+	// === PARDON ===
+	std::cout << "\n=== Presidential Pardon ===" << std::endl;
+	
+	bob.signForm(pardon);
+	alice.signForm(pardon);
+	bob.executeForm(pardon);
+	alice.executeForm(pardon);
 
     return 0;
 }

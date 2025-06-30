@@ -6,7 +6,7 @@
 /*   By: kgulfida <kgulfida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 20:22:05 by kgulfida          #+#    #+#             */
-/*   Updated: 2025/06/24 20:22:06 by kgulfida         ###   ########.fr       */
+/*   Updated: 2025/06/30 12:27:26 by kgulfida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
     RobotomyRequestForm(const RobotomyRequestForm& other);
     RobotomyRequestForm& operator=(const RobotomyRequestForm& other);
     virtual ~RobotomyRequestForm();
-
+	
     virtual void execute(Bureaucrat const& executor) const;
 };
 

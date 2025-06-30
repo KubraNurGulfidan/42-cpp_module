@@ -6,14 +6,14 @@
 /*   By: kgulfida <kgulfida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 20:22:02 by kgulfida          #+#    #+#             */
-/*   Updated: 2025/06/24 20:22:03 by kgulfida         ###   ########.fr       */
+/*   Updated: 2025/06/30 11:29:49 by kgulfida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 #include "Bureaucrat.hpp"
-#include <cstdlib>   // rand, srand
-#include <ctime>     // time
+#include <cstdlib>
+#include <ctime>
 #include <iostream>
 
 RobotomyRequestForm::RobotomyRequestForm()
@@ -48,7 +48,7 @@ void RobotomyRequestForm::execute(Bureaucrat const& executor) const {
 
 	std::srand(std::time(NULL));
 	if (std::rand() % 2 == 0)
-		std::cout << target << " has been robotomized successfully!" << std::endl;
+		std::cout << executor.getName() << "'s " << target << " has been robotomized successfully!" << std::endl;
 	else
-		std::cout << target << " robotomy failed!" << std::endl;
+		std::cout << executor.getName() << "'s " << target << " robotomy failed!" << std::endl;
 }

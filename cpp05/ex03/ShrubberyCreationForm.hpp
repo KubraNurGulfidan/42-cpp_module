@@ -6,7 +6,7 @@
 /*   By: kgulfida <kgulfida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 20:22:12 by kgulfida          #+#    #+#             */
-/*   Updated: 2025/06/24 20:22:13 by kgulfida         ###   ########.fr       */
+/*   Updated: 2025/06/30 12:27:14 by kgulfida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 	ShrubberyCreationForm(const ShrubberyCreationForm& other);
 	ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other);
 	virtual ~ShrubberyCreationForm();
-
+	
 	virtual void execute(Bureaucrat const& executor) const;
 };
 

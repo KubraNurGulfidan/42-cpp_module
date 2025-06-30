@@ -6,7 +6,7 @@
 /*   By: kgulfida <kgulfida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 20:21:59 by kgulfida          #+#    #+#             */
-/*   Updated: 2025/06/24 20:22:00 by kgulfida         ###   ########.fr       */
+/*   Updated: 2025/06/30 12:27:30 by kgulfida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
     PresidentialPardonForm(const PresidentialPardonForm& other);
     PresidentialPardonForm& operator=(const PresidentialPardonForm& other);
     virtual ~PresidentialPardonForm();
-
+	
     virtual void execute(Bureaucrat const& executor) const;
 };
 
