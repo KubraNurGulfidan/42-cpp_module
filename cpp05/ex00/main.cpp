@@ -91,7 +91,7 @@ int main()
 
 	try
 	{
-        Bureaucrat d("David", 151); // grade > 150 → GradeTooLowException
+        Bureaucrat d("David", 151);
     }
 	catch (std::exception& e)
 	{
@@ -100,7 +100,7 @@ int main()
 
 	try
 	{
-        Bureaucrat d("David", 0); // grade > 150 → GradeTooLowException
+        Bureaucrat d("David", 0);
     }
 	catch (std::exception& e)
 	{

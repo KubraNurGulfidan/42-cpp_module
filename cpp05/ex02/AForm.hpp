@@ -6,7 +6,7 @@
 /*   By: kgulfida <kgulfida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 20:21:41 by kgulfida          #+#    #+#             */
-/*   Updated: 2025/06/24 20:21:42 by kgulfida         ###   ########.fr       */
+/*   Updated: 2025/06/30 16:23:06 by kgulfida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ public:
 	int getGradeToSigned() const;
 	int getGradeToExecute() const;
 
-	virtual void beSigned(const Bureaucrat& b);
+	void beSigned(const Bureaucrat& b);
 	virtual void execute(Bureaucrat const& executor) const = 0;
 
 	class GradeTooHighException : public std::exception {
@@ -54,4 +54,4 @@ public:
 
 std::ostream& operator<<(std::ostream& out, const AForm& f);
 
-#endif 
+#endif

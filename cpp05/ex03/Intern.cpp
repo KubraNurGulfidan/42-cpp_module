@@ -6,7 +6,7 @@
 /*   By: kgulfida <kgulfida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 11:37:50 by kgulfida          #+#    #+#             */
-/*   Updated: 2025/06/30 12:00:57 by kgulfida         ###   ########.fr       */
+/*   Updated: 2025/07/08 14:14:03 by kgulfida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,38 @@ Intern& Intern::operator=(const Intern& other)
 
 AForm* Intern::makeForm(const std::string& formName, const std::string& target) const
 {
-    if (formName == "shrubbery creation") {
-        std::cout << "Intern creates " << formName << std::endl;
-        return new ShrubberyCreationForm(target);
-    } else if (formName == "robotomy request") {
-        std::cout << "Intern creates " << formName << std::endl;
-        return new RobotomyRequestForm(target);
-    } else if (formName == "presidential pardon") {
-        std::cout << "Intern creates " << formName << std::endl;
-        return new PresidentialPardonForm(target);
-    } else {
-        std::cout << "Intern couldn't find the form: " << formName << std::endl;
-        return NULL;
-    }
+	int form = -1;
+	std::string forms[] = {"shrubbery creation", "robotomy request", "presidential pardon"};
+	for(int i = 0; i < 3; i++)
+	{
+		if(forms[i] == formName)
+		{
+			form = i;
+			break;
+		}
+	}
+	switch (form)
+	{
+		case 0:
+		{
+			std::cout << "Intern creates " << formName << std::endl;
+			return new ShrubberyCreationForm(target);
+		}
+		case 1:
+		{
+			std::cout << "Intern creates " << formName << std::endl;
+			return new RobotomyRequestForm(target);	
+		}
+		case 2:
+		{
+			std::cout << "Intern creates " << formName << std::endl;
+			return new PresidentialPardonForm(target);
+		}
+		default:
+		{
+			std::cout << "Intern couldn't find the form: " << formName << std::endl;
+			return NULL;
+		}
+	}
 }
 
