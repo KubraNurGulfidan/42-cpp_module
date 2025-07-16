@@ -6,7 +6,7 @@
 /*   By: kgulfida <kgulfida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 17:34:48 by kgulfida          #+#    #+#             */
-/*   Updated: 2025/07/15 19:26:27 by kgulfida         ###   ########.fr       */
+/*   Updated: 2025/07/16 13:34:46 by kgulfida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,15 @@
 #include "A.hpp"
 #include "B.hpp"
 #include "C.hpp"
-#include <ctime>
 
 Base::~Base() {}
 
 Base* generate(void)
 {
-	std::srand(std::time(NULL));
-	if (std::rand() % 3 == 0)
+	int i = std::rand() % 3;
+	if (i == 0)
 		return new A;
-	else if (std::rand() % 3 == 1)
+	else if (i == 1)
 		return new B;
 	else
 		return new C;
@@ -36,11 +35,11 @@ void identify(Base* p)
 	C* C_p = dynamic_cast<C*>(p);
 
 	if (A_p != NULL)
-		std::cout << "This is A class" << std::endl;
+		std::cout << "A class (pointer)" << std::endl;
 	else if (B_p != NULL)
-		std::cout << "This is B class" << std::endl;
+		std::cout << "B class (pointer)" << std::endl;
 	else if (C_p != NULL)
-		std::cout << "This is C class" << std::endl;
+		std::cout << "C class (pointer)" << std::endl;
 }
 
 void identify(Base& p)
@@ -49,26 +48,25 @@ void identify(Base& p)
 	{
 		A& Aref = dynamic_cast<A&>(p);
 		(void)Aref;
-		std::cout << "This is A class" << std::endl;
+		std::cout << "A class (reference)" << std::endl;
 		return ;
 	}
-	catch (std::exception& e)
-	{}
+	catch (std::exception& e){}
+	
 	try
 	{
 		B& Bref = dynamic_cast<B&>(p);
 		(void)Bref;
-		std::cout << "This is B class" << std::endl;
+		std::cout << "B class (reference)" << std::endl;
 		return ;
 	}
-	catch (std::exception& e)
-	{}
+	catch (std::exception& e){}
+	
 	try
 	{
 		C& Cref = dynamic_cast<C&>(p);
 		(void)Cref;
-		std::cout << "This is C class" << std::endl;
+		std::cout << "C class (reference)" << std::endl;
 	}
-	catch (std::exception& e)
-	{}
+	catch (std::exception& e){}
 }
