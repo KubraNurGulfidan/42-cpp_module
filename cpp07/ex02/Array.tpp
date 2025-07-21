@@ -6,7 +6,7 @@
 /*   By: kgulfida <kgulfida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 04:59:10 by kgulfida          #+#    #+#             */
-/*   Updated: 2025/07/17 07:43:19 by kgulfida         ###   ########.fr       */
+/*   Updated: 2025/07/20 17:45:25 by kgulfida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ template <typename T>
 T &Array<T>::operator[](unsigned int idx)
 {
 	if(idx >= this->_size)
-		throw std::exception();
+		throw OutOfBounds();
 	return arr[idx];
 }
 
@@ -53,9 +53,15 @@ template <typename T>
 const T &Array<T>::operator[](unsigned int idx) const
 {
 	if(idx >= this->_size)
-		throw std::exception();
+		throw OutOfBounds();
 	return arr[idx];
 }
 
 template <typename T>
 unsigned int Array<T>::size() const {return this->_size;}
+
+template <typename T>
+const char* Array<T>::OutOfBounds::what() const throw()
+{
+	return ("Accessing out-of-bounds index!");
+}

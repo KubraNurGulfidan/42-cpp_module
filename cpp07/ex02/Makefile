@@ -1,4 +1,4 @@
-NAME = whatever
+NAME = array
 SRC = main.cpp
 
 OBJS = $(SRC:.cpp=.o)

@@ -6,11 +6,23 @@
 /*   By: kgulfida <kgulfida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 03:15:11 by kgulfida          #+#    #+#             */
-/*   Updated: 2025/07/17 04:39:30 by kgulfida         ###   ########.fr       */
+/*   Updated: 2025/07/20 19:17:28 by kgulfida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iter.hpp"
+#include "Iter.hpp"
+
+template <typename T>
+void print(const T& element)
+{
+    std::cout << element << " ";
+}
+
+template <typename T>
+void increment(T& element)
+{
+    element += 1;
+}
 
 int main()
 {

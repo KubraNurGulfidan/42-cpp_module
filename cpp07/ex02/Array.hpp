@@ -6,7 +6,7 @@
 /*   By: kgulfida <kgulfida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 04:59:30 by kgulfida          #+#    #+#             */
-/*   Updated: 2025/07/17 07:06:31 by kgulfida         ###   ########.fr       */
+/*   Updated: 2025/07/20 17:31:47 by kgulfida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,11 @@ public:
 	const T &operator[](unsigned int idx) const;
 	unsigned int size() const;
 
-	
+	class OutOfBounds : public std::exception
+	{
+		public:
+			virtual const char* what() const throw();
+	};
 };
 
 #include "Array.tpp"

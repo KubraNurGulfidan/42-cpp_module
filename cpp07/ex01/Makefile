@@ -1,4 +1,4 @@
-NAME = whatever
+NAME = iter
 SRC = main.cpp
 
 OBJS = $(SRC:.cpp=.o)
