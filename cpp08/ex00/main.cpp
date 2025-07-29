@@ -6,7 +6,7 @@
 /*   By: kgulfida <kgulfida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 15:56:13 by kgulfida          #+#    #+#             */
-/*   Updated: 2025/07/21 16:30:12 by kgulfida         ###   ########.fr       */
+/*   Updated: 2025/07/22 12:47:28 by kgulfida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,15 @@ int main()
 		std::cout << v[i] << " ";
 	std::cout << std::endl;
 	
-    try {
-		
+    try
+	{
         std::cout << "Found in vector: " << *easyfind(v, 3) << std::endl;
         std::cout << "Found in vector: " << *easyfind(v, 1) << std::endl;
 
         easyfind(v, 42);
     }
-	catch (const std::exception& e) {
+	catch (const std::exception& e)
+	{
         std::cerr << "Error: " << e.what() << std::endl;
     }
 
