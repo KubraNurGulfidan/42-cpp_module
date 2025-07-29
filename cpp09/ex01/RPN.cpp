@@ -57,5 +57,7 @@ int RPN::evaluate(const std::string& expression)
 		else
             throw std::runtime_error("Error");
 	}
+	if (stack.size() != 1)
+		throw std::runtime_error("Error");
 	return stack.top();
 }
