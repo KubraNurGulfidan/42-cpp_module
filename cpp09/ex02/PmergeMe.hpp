@@ -1,28 +1,39 @@
 #ifndef PMERGEME_HPP
 # define PMERGEME_HPP
 
+# include <vector>
+# include <deque>
+# include <algorithm>
 # include <iostream>
 # include <stdexcept>
 # include <cstdlib>
 # include <limits>
-# include <vector>
-# include <deque>
+# include <ctime>
 
 class PmergeMe
 {
 private:
-    std::vector<int> vec_container;
-    std::deque<int> deque_container;
+    std::vector<int> _vec;
+    std::deque<int> _deq;
 
+	
+	std::clock_t _vecStart, _vecEnd;
+    std::clock_t _deqStart, _deqEnd;
+	
+    void _sortVector();
+    void _sortDeque();
+	void _printBefore(int ac, char** av);
+    void _printAfter();
+    void _printTiming();
+	
+public:
 	PmergeMe();
 	~PmergeMe();
 	PmergeMe(const PmergeMe& copy);
 	PmergeMe& operator=(const PmergeMe& copy);
-
-public:
-
-	void mergeInsertSort(std::vector<int>& vec);
-	void mergeInsertSort(std::deque<int>& deq);
+	
+	void parseInput(int ac, char** av);
+	void run();
 
 };
 
